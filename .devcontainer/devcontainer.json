@@ -6,7 +6,7 @@
 	"onCreateCommand": "kamu init --pull-images",
 	"remoteUser": "vscode",
 	"features": {
-		"docker-from-docker": "latest",
+		"docker-in-docker": "latest",
 		"git": "latest"
 	}
 }
