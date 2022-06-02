@@ -1,0 +1,12 @@
+{
+	"name": "Kamu",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"onCreateCommand": "kamu init --pull-images",
+	"remoteUser": "vscode",
+	"features": {
+		"docker-from-docker": "latest",
+		"git": "latest"
+	}
+}
