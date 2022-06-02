@@ -1,2 +1,3 @@
-# devkamu
-Small repository to play with Kamu
+# Kamu Sandbox
+
+Play with [Kamu](https://www.kamu.dev/) in the open.
