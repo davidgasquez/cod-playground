@@ -6,7 +6,7 @@
 	"onCreateCommand": "kamu init --pull-images",
 	"remoteUser": "vscode",
 	"features": {
-		"docker-in-docker": "latest",
-		"git": "latest"
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {},
+		"ghcr.io/devcontainers/features/git:1": {}
 	}
 }
