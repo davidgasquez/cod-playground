@@ -8,6 +8,9 @@ build:
 clean-build:
 	docker build --no-cache -t $(IMAGE_NAME):$(IMAGE_VERSION) .
 
+dev:
+	docker run -it --rm -v $(PWD):/workspaces $(IMAGE_NAME):$(IMAGE_VERSION)
+
 push:
 	docker push $(IMAGE_NAME):$(IMAGE_VERSION)
 	docker push $(IMAGE_NAME):latest
