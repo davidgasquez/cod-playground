@@ -1,8 +1,8 @@
-# Compute Over Data Playground
+# :yo_yo: Compute Over Data Playground
 
 Sandbox environment to play around Compute Over Data (COD) technologies.
 
-## Getting Started
+## :rocket: Getting Started
 
 You can easily get started with GitHub Codespaces¹ or Visual Studio Code Development Containers. Alternatively, you can also run the playground with Docker (`make dev`).
 
@@ -10,6 +10,6 @@ You can now start running computation over data using Bacalhau, Kamu, Iroh and o
 
 ¹ Click on the green "Code" button and select "Open with Codespaces".
 
-## Examples
+## :magic_wand: Examples
 
 - Running a SQL query over a Parquet File stored in IPFS: `bacalhau create bacalhau/duckdb.yaml --download`.
