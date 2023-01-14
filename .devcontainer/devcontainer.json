@@ -1,12 +1,12 @@
 {
-	"name": "Kamu",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"onCreateCommand": "kamu init --pull-images",
-	"remoteUser": "vscode",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:1": {},
-		"ghcr.io/devcontainers/features/git:1": {}
-	}
+    "name": "Sandbox Playground",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "settings": {},
+    "remoteUser": "codespace",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
+    }
 }

@@ -1,0 +1,20 @@
+APIVersion: V1beta1
+Spec:
+    Engine: Docker
+    Docker:
+        Image: davidgasquez/duckdb:latest
+        WorkingDirectory: /inputs
+        Entrypoint:
+            - duckdb
+            - -s
+            - "select count(*) from '/inputs/*.parquet'"
+    Timeout: 3600
+    inputs:
+        - CID: bafybeiejgmdpwlfgo3dzfxfv3cn55qgnxmghyv7vcarqe3onmtzczohwaq
+          StorageSource: IPFS
+          path: /inputs
+    outputs:
+        - Name: outputs
+          path: /outputs
+Deal:
+    Concurrency: 1

@@ -1,0 +1,30 @@
+APIVersion: V1beta1
+Spec:
+    Engine: Docker
+    Docker:
+        Image: davidgasquez/duckdb:latest
+        WorkingDirectory: /inputs
+        Entrypoint:
+            - duckdb
+            - -s
+            - "select count(*) from '*.parquet'"
+    Timeout: 3600
+    Sharding:
+      BatchSize: 3
+      GlobPattern: hits*.parquet
+      GlobPatternBasePath: /inputs
+    inputs:
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_1.parquet
+          path: /inputs
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_2.parquet
+          path: /inputs
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_3.parquet
+          path: /inputs
+    outputs:
+        - Name: outputs
+          path: /outputs
+Deal:
+    Concurrency: 1

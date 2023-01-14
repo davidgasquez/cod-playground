@@ -16,3 +16,6 @@
 
 # Kamu
 .kamu
+
+# Bacalhau jobs
+job-*
