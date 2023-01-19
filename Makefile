@@ -9,7 +9,7 @@ clean-build:
 	docker build --no-cache -t $(IMAGE_NAME):$(IMAGE_VERSION) .
 
 dev:
-	docker run -it --rm -v $(PWD):/workspaces $(IMAGE_NAME):$(IMAGE_VERSION)
+	docker run -it --rm --init --privileged -u codespace -v $(PWD):/workspaces $(IMAGE_NAME):$(IMAGE_VERSION) /bin/bash
 
 push:
 	docker push $(IMAGE_NAME):$(IMAGE_VERSION)
