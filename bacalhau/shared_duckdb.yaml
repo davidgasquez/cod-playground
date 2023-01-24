@@ -10,21 +10,30 @@ Spec:
             - "select count(*) from '*.parquet'"
     Timeout: 3600
     Sharding:
-      BatchSize: 3
-      GlobPattern: hits*.parquet
-      GlobPatternBasePath: /inputs
-    inputs:
+      BatchSize: 1
+      GlobPattern: /*
+      BasePath: /inputs
+    Inputs:
         - StorageSource: URLDownload
           URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_1.parquet
-          path: /inputs
+          Path: /inputs
         - StorageSource: URLDownload
           URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_2.parquet
-          path: /inputs
+          Path: /inputs
         - StorageSource: URLDownload
           URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_3.parquet
-          path: /inputs
-    outputs:
+          Path: /inputs
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_4.parquet
+          Path: /inputs
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_5.parquet
+          Path: /inputs
+        - StorageSource: URLDownload
+          URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_6.parquet
+          Path: /inputs
+    Outputs:
         - Name: outputs
-          path: /outputs
-Deal:
-    Concurrency: 1
+          Path: /outputs
+    Deal:
+        Concurrency: 1
