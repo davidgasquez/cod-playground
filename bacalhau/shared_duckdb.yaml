@@ -13,6 +13,9 @@ Spec:
       BatchSize: 1
       GlobPattern: /*
       BasePath: /inputs
+    Resources:
+      CPU: 8
+      Memory: 32Gb
     Inputs:
         - StorageSource: URLDownload
           URL: https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_1.parquet

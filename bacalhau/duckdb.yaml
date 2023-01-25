@@ -9,12 +9,15 @@ Spec:
             - -s
             - "select count(*) from '/inputs/*.parquet'"
     Timeout: 3600
-    inputs:
+    Resources:
+      CPU: 8
+      Memory: 64Gb
+    Inputs:
         - CID: bafybeiejgmdpwlfgo3dzfxfv3cn55qgnxmghyv7vcarqe3onmtzczohwaq
           StorageSource: IPFS
-          path: /inputs
-    outputs:
+          Path: /inputs
+    Outputs:
         - Name: outputs
-          path: /outputs
+          Path: /outputs
 Deal:
     Concurrency: 1
