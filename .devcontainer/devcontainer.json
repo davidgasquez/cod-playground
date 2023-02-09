@@ -4,7 +4,6 @@
         "dockerfile": "../Dockerfile",
         "context": ".."
     },
-    "settings": {},
     "remoteUser": "codespace",
     "hostRequirements": {
         "storage": "64gb"
