@@ -1,5 +1,5 @@
 {
-    "name": "Sandbox Playground",
+    "name": "CoD Sandbox Playground",
     "build": {
         "dockerfile": "../Dockerfile",
         "context": ".."
