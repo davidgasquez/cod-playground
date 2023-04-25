@@ -6,7 +6,7 @@
   },
   "remoteUser": "codespace",
   "hostRequirements": {
-    "storage": "64gb"
+    "storage": "32gb"
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
