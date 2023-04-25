@@ -1,5 +1,7 @@
 # :yo_yo: Compute Over Data Playground
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/davidgasquez/cod-playground)
+
 Sandbox environment to play around Compute Over Data (COD) technologies.
 
 ## :rocket: Getting Started
