@@ -2,18 +2,18 @@ APIVersion: V1beta1
 Spec:
   Engine: Docker
   Docker:
-    Image: keinos/sqlite3:latest
+    Image: keinos/sqlite3:3.41.2
     WorkingDirectory: /inputs
     Entrypoint:
       - sqlite3
-      - /inputs/bsky.db
+      - bsky.db
       - "select * from follows limit 10;"
   Timeout: 3600
   Inputs:
     - Name: bsky.db
       StorageSource: URLDownload
       URL: https://huggingface.co/datasets/andrewconner/bluesky_profiles/resolve/main/bsky.db
-      path: /inputs
+      path: /inputs/bsky.db
   Outputs:
     - Name: outputs
       Path: /outputs
