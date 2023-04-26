@@ -8,14 +8,20 @@ Spec:
       - sqlite3
       - ":memory:"
       - "PRAGMA locking_mode=exclusive;PRAGMA query_only;PRAGMA journal_mode=DELETE;PRAGMA temp_store=MEMORY;"
-      - ".open 'file:/inputs/bsky.db?immutable=1"
-      - "select * from follows limit 10;"
+      - ".open 'file:/inputs/70df29c9aa53b56ffd8d75c6ccdd03449dde26481f85fe80d455224074dea6f4?immutable=1"
+      - >
+        select a.handle, a.followersCount
+        from accounts a
+        inner join follows f on a.did = f.sourceDid
+        where f.targetDid = 'did:plc:4z5i7njrld66ew36htufcwry'
+        order BY a.followersCount desc
+        limit 10;
   Timeout: 3600
   Inputs:
     - Name: bsky.db
       StorageSource: URLDownload
       URL: https://huggingface.co/datasets/andrewconner/bluesky_profiles/resolve/main/bsky.db
-      path: /inputs/bsky.db
+      path: /inputs
   Outputs:
     - Name: outputs
       Path: /outputs
