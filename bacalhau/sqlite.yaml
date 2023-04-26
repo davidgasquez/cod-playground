@@ -6,7 +6,9 @@ Spec:
     WorkingDirectory: /inputs
     Entrypoint:
       - sqlite3
-      - bsky.db
+      - ":memory:"
+      - "PRAGMA locking_mode=exclusive;PRAGMA query_only;PRAGMA journal_mode=DELETE;PRAGMA temp_store=MEMORY;"
+      - ".open 'file:/inputs/bsky.db?immutable=1"
       - "select * from follows limit 10;"
   Timeout: 3600
   Inputs:
